@@ -1,0 +1,23 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <div class="main">
+            <!--ID入力欄と説明は上に乗っけてグルーピング-->
+           <%= form_tag '/top/login', method: :post do %>
+                <%= label_tag :uid, 'ユーザーID' %>
+                <%= text_field_tag :uid %><br>
+                <%= label_tag :pass, 'パスワード' %>
+                <%= password_field_tag :pass %><br>
+                <%= submit_tag '登録' %>
+            <% end %>
+        </div>
+    </body>
+</html>
+
+<style>
+    .label_tag{
+        background-color:red;
+    }
+</style>
