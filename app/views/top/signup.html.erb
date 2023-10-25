@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>会員登録</title>
+    </head>
+    <body>
+        <h1>会員登録</h1>
+        
+                <% if flash[:error] %>
+                  <div class="error">
+                    <%= flash[:error] %>
+                  </div>
+                <% end %>
+        <div class="main">
+            <!--ID入力欄と説明は上に乗っけてグルーピング-->
+           <%= form_tag '/top/signup', method: :post do %>
+                <%= label_tag :uid, 'ユーザーID' %>
+                <%= text_field_tag :uid %><br>
+                <%= label_tag :pass, 'パスワード' %>
+                <%= password_field_tag :pass %><br>
+                <%= submit_tag 'サインアップ' %>
+            <% end %>
+        </div>
+    </body>
+</html>
+
+<style>
+    body{
+        width: 1920px;
+        margin: auto;
+    }
+</style>

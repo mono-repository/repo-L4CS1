@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   
   get 'top/main'
   post 'top/login'
+  get 'top/signup', to: 'top#signup' ,as: 'signup'
+  get 'top/logout'
+
   root 'top#main'
 end

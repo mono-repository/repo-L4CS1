@@ -3,21 +3,31 @@
         
     </head>
     <body>
-        <div class="main">
+        <% if flash[:error] %>
+          <div class="error">
+            <%= flash[:error] %>
+          </div>
+        <% end %>
+        
+        <div class="login">
             <!--ID入力欄と説明は上に乗っけてグルーピング-->
            <%= form_tag '/top/login', method: :post do %>
-                <%= label_tag :uid, 'ユーザーID' %>
+                <span><%= label_tag :uid, 'ユーザーID' %></span>
                 <%= text_field_tag :uid %><br>
-                <%= label_tag :pass, 'パスワード' %>
+                <span><%= label_tag :pass, 'パスワード' %></span>
                 <%= password_field_tag :pass %><br>
-                <%= submit_tag '登録' %>
+                <%= submit_tag 'ログイン' %>
             <% end %>
+        </div>
+        <br>
+        <div class="signup">
+                <%= link_to "サインアップ", signup_path %>
         </div>
     </body>
 </html>
 
 <style>
-    .label_tag{
-        background-color:red;
+    span{
+        backgound-color:red;
     }
 </style>

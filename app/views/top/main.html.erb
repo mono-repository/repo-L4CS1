@@ -1,6 +1,6 @@
 <h1>ログインされました！</h1>
 <p>こちらはメイン画面です</p>
 
-<div class="out">
-    <%= form_tag '/top/login', method: :post do %>
+<div class="logout">
+  <%= link_to "ログアウト", top_logout_path, method: :post%>
 </div>
